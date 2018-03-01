@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter viewer</title>
+</head>
+<body>
+
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:query, "Find tweets") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Find tweets") %>
+<% end %>
+
+<% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet %></td>
+    </tr>
+<% end %>
+
+</body>
+</html>
