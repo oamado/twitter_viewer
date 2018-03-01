@@ -13,9 +13,10 @@
 <% end %>
 
 <% @tweets.each do |tweet| %>
-    <tr>
-      <td><%= tweet %></td>
-    </tr>
+    <blockquote class="twitter-tweet">
+      <p> <%= tweet[:text] %></p>
+      <a href="<%= tweet[:uri] %>" data-datetime="<%= tweet[:date] %>"><%= local_time(tweet[:date]) %></a>
+    </blockquote>
 <% end %>
 
 </body>

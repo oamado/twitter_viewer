@@ -1,8 +1,7 @@
 class MainController < ApplicationController
   def index
-    if params[:query]
+    if params[:query] && !params[:query].empty?
       @tweets = TwitterAPI.new.search(params[:query])
-      puts @tweets[0]
     end
   end
 end
